@@ -2,6 +2,7 @@
 #include "examples.h"
 #include "meshes.h"
 
+#include <float.h>
 #include <string.h>
 
 #include "../webgpu/imgui_overlay.h"
@@ -767,9 +768,9 @@ static void setup_render_passes()
         .loadOp     = WGPULoadOp_Clear,
         .storeOp    = WGPUStoreOp_Store,
         .clearValue = (WGPUColor) {
-          .r = 1.0f,
-          .g = 1.0f,
-          .b = 1.0f,
+          .r = FLT_MAX,
+          .g = FLT_MAX,
+          .b = FLT_MAX,
           .a = 1.0f,
         },
       };
